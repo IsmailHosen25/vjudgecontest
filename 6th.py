@@ -1,13 +1,12 @@
-def miniMaxSum(arr):
-    arr.sort()
-    hold = [None]*int(len(arr)-3)
-    for i in range(0,len(arr)-3):
-        temp = 0
-        for j in range(i,i+4):
-            temp = temp + arr[j]
-        hold[i] = temp
-    
-    print(hold[0],hold[-1])
+def min_max(arr):
+    min=0
+    max=0
+    for i in range(0,len(arr)-1):
+        min+=arr[i]
+    for i in range(len(arr)-1,0,-1):
+        max+=arr[i]
+    print(min ,end=" ")
+    print(max)
 
-arr = list(map(int, input().rstrip().split()))
-miniMaxSum(arr)
+arr=list(map(int,input().split()))
+min_max(arr)
